@@ -1,0 +1,24 @@
+{
+  "name": "mikaelletang/meetup_17",
+  "autoload": {
+    "PSR4": {
+      "": [
+        "src"
+      ],
+      "Test\\": [
+        "tests/functional",
+        "tests/unit"
+      ]
+    }
+  },
+  "require": {
+    "php": "^7.1",
+    "phpunit/phpunit": "^6.4"
+  },
+  "authors": [
+    {
+      "name": "Mikaël Létang",
+      "email": "mikael.letang@gmail.com"
+    }
+  ]
+}
