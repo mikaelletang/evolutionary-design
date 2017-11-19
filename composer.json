@@ -1,14 +1,8 @@
 {
   "name": "mikaelletang/meetup_17",
   "autoload": {
-    "PSR4": {
-      "": [
-        "src"
-      ],
-      "Test\\": [
-        "tests/functional",
-        "tests/unit"
-      ]
+    "psr-4": {
+      "BankKata\\": ["src/", "tests/acceptation/", "tests/unit/"]
     }
   },
   "require": {
