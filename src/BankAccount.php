@@ -10,11 +10,15 @@ class BankAccount
     public function getStatement()
     {
         $statement = "Date | Amount | Balance\n";
-        $statement .= implode("\n", $this->transactions);
+        $balance = 0;
+        foreach ($this->transactions as $transaction) {
+            $balance += $transaction->amount;
+            $statement .= sprintf("%s | %d | %s\n", $transaction->date, $transaction->amount, $balance);
+        }
         return $statement;
     }
 
-    public function addTransaction($transaction)
+    public function addTransaction(Transaction $transaction)
     {
         $this->transactions[] = $transaction;
     }
