@@ -13,7 +13,7 @@ class BankController
 
     public function getStatement(int $bankAccountId) : string
     {
-        $statement = $this->repository->get($bankAccountId);
+        $statement = $this->repository->get($bankAccountId)->getStatement();
         return $statement;
 
     }
