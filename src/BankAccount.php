@@ -5,13 +5,17 @@ namespace BankKata;
 class BankAccount
 {
 
+    private $transactions = [];
+
     public function getStatement()
     {
-        return <<< EOF
-Date | Amount | Balance
-10/10/2017 | 500 | 500
-10/10/2017 | -200 | 300
-10/10/2017 | 300 | 600
-EOF;
+        $statement = "Date | Amount | Balance\n";
+        $statement .= implode("\n", $this->transactions);
+        return $statement;
+    }
+
+    public function addTransaction($transaction)
+    {
+        $this->transactions[] = $transaction;
     }
 }
