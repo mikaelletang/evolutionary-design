@@ -11,6 +11,8 @@ class BankAccountTest extends TestCase
     {
         //Given
         $bankAccount = new BankAccount(
+            $accountId = 1,
+            $lines =
             [
                 '10/10/2017 | 500 | 500',
                 '10/10/2017 | -200 | 300',
@@ -19,7 +21,8 @@ class BankAccountTest extends TestCase
         );
 
         //When
-        $statement = $bankAccount->getStatement();
+        $controller = new BankController();
+        $statement = $controller->getStatement($accountId);
 
         //Then
         $expectedStatement = <<< EOF
