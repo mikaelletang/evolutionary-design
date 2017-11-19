@@ -18,7 +18,7 @@ class BankAccount
         return $statement;
     }
 
-    public function addTransaction(Transaction $transaction)
+    public function addTransaction($transaction)
     {
         $this->transactions[] = $transaction;
     }
