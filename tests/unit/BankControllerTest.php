@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 class BankControllerTest extends TestCase
 {
     function testGetStatement() {
-        $controller = new BankController();
+        $controller = new BankController(new Repository());
         $statement = $controller->getStatement($bankAccountId = 1);
         $expectedStatement = $expectedStatement = <<< EOF
 Date | Transaction | Balance

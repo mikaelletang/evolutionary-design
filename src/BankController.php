@@ -4,22 +4,17 @@ namespace BankKata;
 
 class BankController
 {
+    private $repository;
 
-    /**
-     *
-     */
-    public function __construct()
+    public function __construct(Repository $repository)
     {
+        $this->repository = $repository;
     }
 
     public function getStatement(int $bankAccountId) : string
     {
-        return <<<EOF
-Date | Transaction | Balance
-10/10/2017 | 500 | 500
-10/10/2017 | -200 | 300
-10/10/2017 | 300 | 600
-EOF;
+        $statement = $this->repository->get($bankAccountId);
+        return $statement;
 
     }
 }
