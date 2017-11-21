@@ -15,7 +15,10 @@ class BankControllerTest extends TestCase
     protected function setUp()
     {
         $this->bankAccountRepository = new BankAccountRepository();
-        $this->bankAccount =new BankAccount();
+        $this->bankAccount = new BankAccount();
+        $this->bankAccount->addTransaction('10/10/2017 | 500 | 500');
+        $this->bankAccount->addTransaction('10/10/2017 | -200 | 300');
+        $this->bankAccount->addTransaction('10/10/2017 | 300 | 600');
         $this->bankAccountRepository->add($accountId = 1, $this->bankAccount);
     }
 
