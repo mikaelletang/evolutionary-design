@@ -3,6 +3,7 @@
 namespace Tests;
 
 use BankKata\BankAccount;
+use BankKata\BankAccountRepository;
 use BankKata\BankController;
 use BankKata\Repository;
 use BankKata\Transaction;
@@ -18,8 +19,11 @@ class BankAccountTest extends TestCase
         $bankAccount->addTransaction(new Transaction('10/10/2017', '-200'));
         $bankAccount->addTransaction(new Transaction('10/10/2017', '300'));
 
+        $bankAccountRepository = new BankAccountRepository();
+        $bankAccountRepository->add($bankAccountId = 1, $bankAccount);
+
         //When
-        $controller = new BankController(new Repository());
+        $controller = new BankController($bankAccountRepository);
         $statement = $controller->getStatement($accountId = 1);
 
         //Then
