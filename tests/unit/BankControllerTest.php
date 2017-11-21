@@ -16,9 +16,9 @@ class BankControllerTest extends TestCase
     {
         $this->bankAccountRepository = new BankAccountRepository();
         $this->bankAccount = new BankAccount();
-        $this->bankAccount->addTransaction('10/10/2017 | 500 | 500');
-        $this->bankAccount->addTransaction('10/10/2017 | -200 | 300');
-        $this->bankAccount->addTransaction('10/10/2017 | 300 | 600');
+        $this->bankAccount->addTransaction(new Transaction('10/10/2017', '500'));
+        $this->bankAccount->addTransaction(new Transaction('10/10/2017', '-200'));
+        $this->bankAccount->addTransaction(new Transaction('10/10/2017', '300'));
         $this->bankAccountRepository->add($accountId = 1, $this->bankAccount);
     }
 
