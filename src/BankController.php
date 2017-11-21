@@ -6,7 +6,7 @@ class BankController
 {
     private $repository;
 
-    public function __construct(Repository $repository)
+    public function __construct(BankAccountRepository $repository)
     {
         $this->repository = $repository;
     }
